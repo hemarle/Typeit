@@ -1,0 +1,21 @@
+.subscribe{
+   padding: 5vh 20px;
+   background-color: wheat;
+   
+}
+.subscribe h1{
+    font-size: 1.3rem;
+}
+.subscribe p{
+    margin: 15px 0px 30px 0px;
+    font-size: 1rem;
+}
+.subscribe a{
+    background-color:var(--red);
+    padding: 10px 30px;
+border-radius: 10px;
+color: white;
+display: block;
+margin-inline: auto;
+width: max-content;
+}

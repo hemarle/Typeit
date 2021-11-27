@@ -1,0 +1,75 @@
+.testimonial{
+    padding: 5vh 0px;
+    height: 400px ;
+}
+.testimonial__Title{
+    text-align: center;
+    padding-inline: 5vw;
+    font-size: 1.4rem;
+}
+.testimonial__About{
+    margin: 15px 10px 30px 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.testimonial__Cards{
+    display: flex;
+    position: relative;
+    height:100px;
+}
+.testimonial__Card{
+   padding: 15px ;
+    position: absolute;
+    border: 1px solid rgb(88, 28, 28);
+    border-radius: 10px;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 400px;
+}
+.testimonial__CardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-items: center;
+}
+.testimonial__Avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    margin-inline: 20px;
+}
+.testimonial__Name{
+    font-size: 12px;
+    width: max-content;
+    margin-right: 10px;
+}
+.testimonial__Role{
+    font-size: 10px;
+}
+.testimonial__Star{
+    display: flex;
+    align-items: center;
+}.testimonial__Star p{
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 900;
+}
+.testimonial__Content{
+    width: 100%;
+    text-align: justify;
+    padding: 5px 10px;
+}
+
+@media screen and (min-width:1440px) {
+    .testimonial__Cards{
+        justify-content: space-evenly;
+    }
+    .testimonial__Card{
+        position: relative;
+    }
+
+}

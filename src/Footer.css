@@ -1,0 +1,29 @@
+.footer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+    background: #F8F8F8;
+}
+.footer__Product,.footer__Engage,.footer__Earn{
+    display: none;
+}
+.footer__LeftName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.footer__LeftName img{
+    margin-right: 5px;
+    width: 20px;
+}
+.footer__About{
+    text-align: justify;
+margin-inline: 5vw;
+}
+@media screen and (min-width:768px) {
+    .footer__Product,.footer__Earn,.footer__Engage{
+        display: flex;
+    }
+}

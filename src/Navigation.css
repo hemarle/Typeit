@@ -1,0 +1,25 @@
+.nav{
+    display: flex;
+justify-content: space-between;
+margin: 20px ;
+}
+
+.nav__Logo{
+display: flex;
+align-items: center;
+height:30px;
+}
+
+.nav__Text{
+    margin-left: 10px;
+}
+.nav__Text span{
+    font-weight: 700;
+}
+nav{
+    position: absolute;
+}
+
+.remove{
+    display: none;
+}

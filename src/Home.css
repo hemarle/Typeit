@@ -1,0 +1,38 @@
+.home{
+    padding: 10px 0px;
+}
+
+.home__Image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home__Content{   
+    margin:0px 5vw;
+}
+.home__Title{
+margin-top: 10px;
+/* font-size: 1rem; */
+
+}
+
+.home__About{
+    width: 100%;
+    text-align:justify;
+margin: 10px 0px 30px 0px;
+}
+
+.home__Link{
+color: white;
+background-color: #F53838;
+padding: 10px 20px;
+
+}
+@media screen and (min-width:768px) {
+    .home{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding-inline: 30px;
+    }
+}
