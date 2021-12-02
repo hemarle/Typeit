@@ -9,12 +9,12 @@ function Home() {
             </div>
             <div className='home__Content'>
                 <h2 className='home__Title'>
-                    Want anything to be easy with <span>FemiVpn</span>
+                     Get your projects typed before  <span>Due Date</span>
                 </h2>
                 <p className='home__About'>
                     We offer you the best services you can ever think of. A trial is more than enough to be convinced.
                 </p>
-                <a className='home__Link' href='#'> Get started</a>
+                <a className='home__Link' href='#plan'> Get started</a>
             </div>
         </div>
     )

@@ -1,8 +1,6 @@
 .footer{
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px 0px;
+    padding: 50px 0px;
     background: #F8F8F8;
 }
 .footer__Product,.footer__Engage,.footer__Earn{
@@ -22,8 +20,53 @@
     text-align: justify;
 margin-inline: 5vw;
 }
+.footer ul{
+    list-style: none;
+}
 @media screen and (min-width:768px) {
+ .footer{
+     padding-inline: 5vw;
+     /* align-items: center; */
+ }
     .footer__Product,.footer__Earn,.footer__Engage{
         display: flex;
+        flex: 0.2;
+        margin-left: 50px;
     }
+    .footer__LeftName{
+flex: 0.4;       
+    }
+.footer__About{
+    margin: 0px;
+}
+    .footer__Subtitle{
+font-weight: 700;
+margin-bottom: 20px !important;
+
+    }
+.footer__Earn{ 
+margin-right: 2vw;
+
+}
+.footer__Earn li{
+    width: max-content;
+
+
+}
+.footer li{
+    margin-bottom:10px;
+}
+.footer a{
+   
+color:#4F5665;
+}
+
+}
+@media screen and (min-width:1200px) {
+ .footer__Left{
+     margin-right: 5vw;
+ }  
+ .footer__Product,.footer__Earn,.footer__Engage{
+margin-left: 10vw; 
+} 
 }

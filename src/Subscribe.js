@@ -8,7 +8,7 @@ function Subscribe() {
                     <h1> Subscribe Now for special feature</h1>
                     <p> Join us now to catch the fun</p>
                 </div>
-                <a href=''>Subscribe Now</a>
+                <a href='#plan'>Subscribe Now</a>
             </div>
         </div>
     )

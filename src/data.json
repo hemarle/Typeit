@@ -1,0 +1,30 @@
+{
+    "testimonial":[{
+        "name":"Yemi Daramola",
+        "role": "frontend developer",
+        "review": " This is a well done job.  Kudoss. This is a well done job.  Kudos to the organisers one",
+        "stars":4.5,
+        "avatar":"./images/alex.png",
+        "id":1
+
+    },
+    {
+        "id":2,
+        "name":"Kemi Daramola",
+        "role": "frontend developer",
+        "review": "Kudos to the This is actually better than what i think it wwould be. This is a well done job.  Kudos to the organisers two",
+        "stars":4.5,
+        "avatar":" ./images/alex.png"
+
+    },
+    {
+        "id":3,
+        "name":"Femi Daramola",
+        "role": "frontend developer",
+        "review": "This is actually better than what i think it wwould be. This is a well done job.  Kudos to the This is actually better than what i think it wwould be. This is a well done job.  Kudos to the organisers three",
+        "stars":4.5,
+        "avatar":" ./images/alex.png"
+
+    }   
+]
+}

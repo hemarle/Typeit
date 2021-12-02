@@ -15,6 +15,21 @@ margin-top: 10px;
 /* font-size: 1rem; */
 
 }
+.home__Title span{
+    animation: colorChange 5s linear infinite;
+}
+@keyframes colorChange {
+    0% {
+      
+        color: hotpink;
+        filter: hue-rotate(0deg);
+    }
+    100%{
+
+        color: hotpink;
+        filter: hue-rotate(360deg);
+    }
+}
 
 .home__About{
     width: 100%;

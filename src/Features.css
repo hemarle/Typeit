@@ -17,12 +17,10 @@
     margin: 20px auto ;
     text-align: justify;
     font-size: 16px;
-    /* width: 90%; */
 }
 .features__Lists{
 
     margin: 15px 5vw;
-    /* width: max-content; */
     
 }
 .features__List{
@@ -38,31 +36,32 @@
     .features{
         display: flex;
         align-items: center;
-        /* justify-content: space-between; */
-      
-        padding-inline: 30px;
+        padding-inline: 0px;
     }
  .features__Content{
-     /* width: 100vw; */
 flex:0.5;
-/* margin-left: 30px; */
 display: flex;
 flex-direction: column;
 align-content: flex-end;
 margin: 25px 0vw;
-/* margin-right: -20px; */
 }
  .features__Image{
      flex: 0.5;
-     padding-right: 40px;
+     padding-right: 50px;
  }
  .features__About{
-     width: 85%;
+     width: 95%;
      max-width: 500px;
-     margin-inline: 0%;
+     margin: 10px 0px;
  }
     .features__Lists{
-        width: 100%;
+        width: max-content;
+        margin:  0px auto;
+
+    }
+}
+@media screen and (min-width:1440px){
+    .features__Lists{
         margin-inline: 0px;
     }
 }

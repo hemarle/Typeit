@@ -1,8 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Testimonial.css'
-import alex from './images/alex.png'
 import star from './images/star.png'
+import datas from './data.json'
+
 function Testimonial() {
+
+    //     useEffect(() => {
+//         let cardRef = document.querySelectorAll('.testimonial__Card')
+//         function change() {
+//         for (let i = 0; i < 3; i++){
+//             cardRef[i].classList.add('remove')
+//             console.log(i)
+            
+//             }
+
+//         }
+// setTimeout(5000, change())
+
+       
+//     }, [])
+
     return (
         <div className='testimonial'>
             <h1 className='testimonial__Title'>
@@ -10,26 +27,32 @@ function Testimonial() {
             </h1>
             <p className='testimonial__About'>   Hear what our customers have to say.</p>
             <div className='testimonial__Cards'>
-                <div className='testimonial__Card'>
+
+                {
+                    datas.testimonial.map(({avatar, name, role, review, stars }) => (
+                        <div className='testimonial__Card'>
 
                     <div className='testimonial__CardHeader'>
                         <div className='testimonial__Avatar'>
-                            <img src={alex} alt='alex avatar' />
+                            <img src={avatar} alt='alex avatar' />
                        </div>
                         <div className='testimonial__Details'>
                             <h3 className='testimonial__Name'>
-                                Victor Akunagba
+                                {name}
                             </h3>
-                            <p className='testimonial__Role'>Side huste</p>
+                                    <p className='testimonial__Role'>{ role}</p>
                         </div>
                         <div className='testimonial__Star'>
 
-                            <p>4.5 </p>
+                            <p>{stars} </p>
                                 <img src={star} alt='star' />
                         </div>
                     </div>
-                    <p className='testimonial__Content'> “Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best”.</p>
+                    <p className='testimonial__Content'> {review}.</p>
                 </div>
+                  ))  
+                }
+                
             </div>
         </div>
     )

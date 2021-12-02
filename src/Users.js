@@ -8,7 +8,7 @@ function Users() {
 
                 <div className='users__Card'>
                     <div className='users__Icon'>
-                        <img src={user} />
+                        <img src={user} alt='user icon'/>
                     </div>
                     <div className='users__Details'>
                         <h3>90+</h3>
@@ -18,7 +18,7 @@ function Users() {
              
                 <div className='users__Card'>
                     <div className='users__Icon'>
-                        <img src={user} />
+                        <img src={user} alt='user icon'/>
                     </div>
                     <div className='users__Details'>
                         <h3>30+</h3>
@@ -28,7 +28,7 @@ function Users() {
              
                 <div className='users__Card'>
                     <div className='users__Icon'>
-                        <img src={user} />
+                        <img src={user} alt='user icon'/>
                     </div>
                     <div className='users__Details'>
                         <h3>50+</h3>

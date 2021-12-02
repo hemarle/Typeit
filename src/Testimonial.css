@@ -1,6 +1,6 @@
 .testimonial{
     padding: 5vh 0px;
-    height: 400px ;
+    min-height: 400px ;
 }
 .testimonial__Title{
     text-align: center;
@@ -16,7 +16,7 @@
 .testimonial__Cards{
     display: flex;
     position: relative;
-    height:100px;
+    /* height:100px; */
 }
 .testimonial__Card{
    padding: 15px ;
@@ -29,26 +29,95 @@
     width: 90vw;
     max-width: 400px;
 }
+.testimonial__Card:nth-child(1){
+    animation: animateCard 15s  linear infinite;
+
+ 
+}
+.testimonial__Card:nth-child(2){
+    animation: animateCard2 15s linear infinite;
+    
+}
+.testimonial__Card:nth-child(3){
+    animation: animateCard3 15s linear infinite;
+    
+}
+@keyframes  animateCard{
+  0%{
+  opacity: 1;
+}
+  16%{
+      opacity: 1;
+      z-index: 0;
+    }
+  32%{
+      opacity: 0;
+      z-index: -1;
+    }
+
+  85%{
+      opacity: 0;
+  }
+
+  100%{
+opacity: 1;
+  }
+}
+@keyframes  animateCard2{
+0%{
+opacity: 0;
+}
+
+32%{
+    opacity: 0;
+}
+33%{
+    opacity: 1;
+}
+56%{
+    opacity: 0;
+}
+100%{
+opacity: 0;
+}
+}
+@keyframes  animateCard3{
+ 0%{
+     opacity: 0;
+ }
+ 55%{
+     opacity: 0;
+ } 
+ 56%{
+     opacity: 1;
+ }
+ 85%{
+     opacity: 0;
+ }
+ 100%{
+     opacity: 0;
+ }
+}
 .testimonial__CardHeader{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     align-items: center;
+    margin-bottom: 10px;
 }
 .testimonial__Avatar{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-
-    margin-inline: 20px;
+    margin-inline: 20px 10px;
 }
 .testimonial__Name{
-    font-size: 12px;
+    font-size: 1rem;
     width: max-content;
     margin-right: 10px;
 }
 .testimonial__Role{
-    font-size: 10px;
+    font-size: 12px;
+    text-align: center;
 }
 .testimonial__Star{
     display: flex;
@@ -62,6 +131,47 @@
     width: 100%;
     text-align: justify;
     padding: 5px 10px;
+}
+@media screen and (min-width:768px) {
+    .testimonial__Name{
+        font-size: 1.1rem;
+    }
+    .testimonial__Role{
+        font-size: 1rem;
+        text-align: center;
+       
+    }
+    .testimonial__Star{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (min-width:999px) {
+    .testimonial__Cards{
+justify-content: space-evenly;
+flex-wrap: wrap;
+    }
+    .testimonial__Card{
+        position: relative;
+    left: 0%;
+    transform: translateX(0%);
+max-width: 300px;
+
+    }
+    @keyframes animateCard{
+        0%, 100%{
+            opacity: 1;
+        }
+    }
+    @keyframes animateCard2{
+        0%, 100%{
+            opacity: 1;
+        }
+    }
+    @keyframes animateCard3{
+        0%, 100%{
+            opacity: 1;
+        }
+    }
 }
 
 @media screen and (min-width:1440px) {
