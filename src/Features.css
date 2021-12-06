@@ -1,5 +1,6 @@
 .features{
    margin-bottom: 10px;
+opacity: 0;
 }
 .features__Image{
     display: flex;
