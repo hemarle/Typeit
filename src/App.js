@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-
 import './App.css';
+import Auth from './Auth'
 import Features from './Features';
 import Footer from './Footer';
 import Home from './Home'
@@ -127,7 +127,8 @@ function App() {
     return (
         <div className="app"
             ref={el}>
-            <Navigation/>
+<Auth/>
+            {/* <Navigation/>
             <Home/>
             <Users/>
             <Features/>
@@ -135,19 +136,9 @@ function App() {
             <Map/>
             <Testimonial/>
             <Subscribe/>
-            <Footer/>
+            <Footer/> */}
         </div>
     );
 }
 
 export default App;
-// gsap.from(query('.users'), 1, { display: "none" })
-
-// tl
-// .from(query('.features__Image'), { opacity:0, x: "-100%" })
-// .from(query('.features__Content h2'), {opacity:0,  x: "100%" } )
-// .from(query('.features__Content > p'), {opacity:0,  x: "100%" } )
-// .from(query('.features__Content ul'),  {opacity:0,  x: "100%" } )
-
-// tl
-// .from(query('.plan__Card'), {opacity:0, x: "-100%" }, "+=2")
