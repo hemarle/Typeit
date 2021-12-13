@@ -126,8 +126,11 @@ function App() {
 
     return (
         <div className="app"
-            ref={el}>
+
+ref={el}>
+{/* <Navigation/> */}
 <Auth/>
+
             {/* <Navigation/>
             <Home/>
             <Users/>
