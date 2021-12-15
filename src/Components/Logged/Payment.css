@@ -1,0 +1,59 @@
+.payment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    min-height: 100vh;
+width: 100vw;
+}
+.payment__Header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.payment__Form{
+    display: flex;
+    flex-direction: column;
+    }
+.payment__Form input{
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid gray;
+    padding: 20px;
+}
+.payment__Price{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+.payment__Price p{
+    margin-left: 20px;
+}
+
+.payment__Form input[type='submit']{
+    padding: 0%;
+    cursor: pointer;
+    width: 150px;
+margin-inline: auto;
+}
+@media screen and (min-width:768px) {
+    .payment{
+        width: 100%;
+    }
+    .payment__Price{
+        justify-content: center;
+        align-items: center;
+    }
+    .payment__Price p{
+        margin-left: 10px;
+        font-size: 19px;
+
+    }
+    .payment__Form input{
+        width: 600px;
+
+        margin-inline: auto;
+    }
+    
+}

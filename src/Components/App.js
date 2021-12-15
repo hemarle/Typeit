@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import {Routes, Route} from 'react-router-dom'
 import './App.css';
 import Auth from './Auth'
 import Features from './Features';
@@ -12,12 +13,18 @@ import Testimonial from './Testimonial';
 import Users from './Users';
 import {gsap} from 'gsap'
 
+import Cookies from 'universal-cookie';
+
 
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Main from './Logged/Main';
 
 
 function App() {
+
+  const cookies= new Cookies();
+ let userLogged = cookies.get('user');
+  console.log(userLogged, 'userLogged')
     gsap.registerPlugin(ScrollTrigger);
     gsap.defaults({ease: 'ease.inOut', duration: .7})
 
@@ -133,9 +140,20 @@ function App() {
 ref={el}>
 {/* <Navigation/> */}
 
-{/* <Auth/> */}
-<Main/>
-            {/* <Navigation/>
+{
+  userLogged?<Main/>
+  :
+  <>
+  
+  
+
+<Routes>
+  <Route path='/authenticate'element={<Auth/>} >
+
+
+  </Route>
+</Routes>
+            <Navigation/>
             <Home/>
             <Users/>
             <Features/>
@@ -143,7 +161,10 @@ ref={el}>
             <Map/>
             <Testimonial/>
             <Subscribe/>
-            <Footer/> */}
+            <Footer/>
+            </>
+}
+            
         </div>
     );
 }

@@ -4,6 +4,7 @@ import './Navigation.css'
 import logo from './images/logo.png'
 import hamburger from './images/icon-hamburger.svg'
 import close from './images/icon-close.svg'
+
 function Navigation() {
    
     
@@ -46,8 +47,8 @@ function Navigation() {
                    
                 </ul>
                 <ul className='nav__Auth'>
-                    <li><a href='#'>Sign In</a></li>
-                    <li className='nav__SignUp' ><a href='#'> Sign Up</a></li>
+                    <li><a href='/authenticate'>Sign In</a></li>
+                    <li className='nav__SignUp' ><a href='/authenticate'> Sign Up</a></li>
                 </ul>
             </nav>
         </div>

@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import {useNavigate} from 'react-router-dom'
 import "./Auth.css";
+import firebase from "./firebase";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+import Cookies from "universal-cookie/es6";
 import illustrator from "./images/Group.png";
 import logo from "./images/logo.png";
 import mailIcon from "./images/icon.png";
@@ -8,17 +16,23 @@ import lockIcon from "./images/lock.png";
 import googleIcon from "./images/Google.png";
 import gitlabIcon from "./images/gitlab.png";
 
+
 function Auth() {
+  //firebase
+  const auth = getAuth();
+//cookies
+const cookies = new Cookies();
+
+const navigate= useNavigate()
+
   const [signUp, setSignUp] = useState(true);
-const [username, setUserName]=useState('')
-const [email, setEmail]=useState('')
-const [password, setPassword]=useState('')
+  const [email, setEmail] = useState("");
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
   let regRef = useRef();
-  let submitRef= useRef();
+  let submitRef = useRef();
   useEffect(() => {
-
-
     function changeState() {
       if (signUp == true) {
         setSignUp(false);
@@ -26,25 +40,54 @@ const [password, setPassword]=useState('')
     }
     regRef.current.addEventListener("click", changeState);
 
+  }, [signUp]);
 
-    function authenticate(e){
-e.preventDefault()
-    if (!signUp){
-if (email && password){
-  console.log(email, password)
-}
-    } 
-    else{
-      if (email && password && username){
-        alert(email, password, username)
+//Authentication
+  function authenticate(e) {
+    if (!signUp) {
+      if (email && password) {
+         signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user, 'user')
+      cookies.set('user', user);
+console.log(cookies.get('user')) 
+
+
+navigate('/upload');
+      // ...
+    }).then(
+
+    )
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('error', errorCode, errorMessage)
+    });
       }
-
-    } 
+      else{
+        console.log('error')
+      }
+    } else {
+      if (email && password && username) {
+        console.log(email, password, username)
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((user) => {
+            console.log(user, "user");
+            setSignUp(false)
+          })
+          .catch((error) => alert(error.message));
+      }
+      else(console.log('empty'))
     }
-
-    submitRef.current.addEventListener('click', authenticate)
-  }, [signUp, email,password, username]);
-
+    e.preventDefault()
+  }
+  
+  // function authenticate(e){
+  //   console.log(username, 'user')
+  //   e.preventDefault()
+  // }
 
 
   return (
@@ -58,31 +101,49 @@ if (email && password){
 
       <div className="auth__Content">
         <h2> {signUp ? `Sign Up` : `Sign In`}</h2>
-        <form className="auth__Form" >
+        <form className="auth__Form" onSubmit={(e)=>{authenticate(e)}}>
           <div className="auth__Input">
             <div className="auth__Name">
               <img src={mailIcon} />
-              <input type="email" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onInputCapture={(e) => setEmail(e.target.value)}
+              />
             </div>
           </div>
+        
 
           <div className="auth__Password">
             <div className="auth__Name">
               <img src={lockIcon} />
-              <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
+              <input
+                type="password"
+                value={password}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <img src={viewIcon} />
           </div>
-          {signUp && (
-            <>
+
+      
+          {signUp && 
+             <> 
               <div className="auth__Input">
                 <div className="auth__Name">
                   <img src={mailIcon} />
-                  <input type="text" placeholder="FullName" onChange={(e)=>setUserName(e.target.value)}/>
+                  <input
+                    type="text"
+                    value={username}
+                    placeholder="FullName"
+                    onInputCapture={(f) => setUserName(f.currentTarget.value)}
+                  />
                 </div>
               </div>
             </>
-          )}
+            } 
 
           {!signUp && (
             <p className="auth__ForgotPassword"> Forgot password? </p>
