@@ -1,0 +1,66 @@
+.upload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+.upload__Title{
+    margin: 20px 0px
+}
+
+.upload__Draggable{
+    border: 1px solid grey;
+    height: 40vh;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+.upload__Draggable h3{
+    margin-bottom: 10vh;
+}
+.upload__Draggable p{
+    font-size: 10px;
+}
+.upload__Buttons{
+    display: flex;
+}
+.upload__Buttons button{
+    border: none;
+    outline: none;
+    background-color: tomato;
+    height: 40px;
+    width: 100px;
+    margin: 0px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: rgb(248, 220, 220);
+}
+@media screen and (min-width:768px) {
+    .upload__Image img{
+        width: 30vw;
+    }
+    .upload__Draggable{
+        width: 100%;
+    }
+    .upload__Draggable h3{
+        font-size: 1.6em;
+    }
+    .upload__Draggable p{
+        font-size: 1.2em;
+    }
+    .upload__Buttons{
+ justify-content: space-evenly;
+ width: 100%;       
+    }
+    .upload__Buttons button{
+        width: 200px;
+
+    }
+}

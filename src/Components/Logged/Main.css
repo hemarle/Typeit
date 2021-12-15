@@ -1,0 +1,25 @@
+.main__Content{
+    display: flex;
+    min-height: 100vh;
+}
+.main__Left{
+   
+    display: none;
+}
+
+
+@media screen and (min-width:768px) {
+    .main__Left{
+        display: flex;
+        flex:0.3;
+        background-color: var(--red);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 2vw;
+    }
+    .main__Right{
+        flex: 0.7;
+    }
+}

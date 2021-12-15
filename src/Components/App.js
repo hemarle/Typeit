@@ -14,6 +14,7 @@ import {gsap} from 'gsap'
 
 
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import Main from './Logged/Main';
 
 
 function App() {
@@ -125,12 +126,15 @@ function App() {
     }, [])
 
     return (
-        <div className="app"
+
+
+      <div className="app"
 
 ref={el}>
 {/* <Navigation/> */}
-<Auth/>
 
+{/* <Auth/> */}
+<Main/>
             {/* <Navigation/>
             <Home/>
             <Users/>

@@ -1,0 +1,43 @@
+.profile{
+  
+padding: 50px ;
+}
+.profile__Image{
+    border-radius: 50px;
+    background-color: blanchedalmond;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    padding: -50%;
+}
+.profile__Image img{
+    width: 10vh;
+    height: 10vh;
+    border-radius:50%;
+    display: block;
+    margin-inline: auto;
+}
+.profile h1{
+    text-align: center;
+    margin:20px 0px
+}
+.profile__Content{
+    margin-top: 50px;
+}
+
+.profile__Detail{
+display: flex;
+margin-bottom: 15px;
+}
+.profile__Detail p{
+    margin-left: 30px;
+}
+
+@media screen and (min-width:768px) {
+    
+    .profile__Detail{
+        padding: 0px 50px;
+       
+    }
+    
+}

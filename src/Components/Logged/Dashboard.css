@@ -1,0 +1,54 @@
+.dashboard {
+  padding: 50px;
+}
+.dashboard__Image{
+    background: url('.././images/Illustration/illustrate.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 60vh;
+}
+.dashboard__Header {
+  text-align: center;
+  margin: 20px 0px;
+}
+.dashboard__WorkdoneHeader {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.dashboard__Title {
+  color: burlywood;
+}
+.dashboard__Details {
+  font-size: 0.8rem;
+  margin-left: 10%;
+}
+.dashboard__Lists {
+  display: none;
+}
+.dashboard__List {
+  margin-bottom: 5px;
+}
+.dashboard li::marker {
+  color: burlywood;
+}
+
+.dashboard__Complain{
+    margin-top: 20vh;
+    text-align: center;
+}
+.dashboard__Complain p{
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+@media screen and (min-width:768px) {
+    
+    .dashboard__Content{
+        /* margin-top: 50px; */
+        padding-left: 150px;
+    }
+
+}
