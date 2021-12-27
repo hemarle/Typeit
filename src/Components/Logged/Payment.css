@@ -14,13 +14,23 @@ width: 100vw;
     display: flex;
     flex-direction: column;
     }
-.payment__Form input{
+.payment__Form input, select{
     margin-bottom: 20px;
     height: 40px;
     border-radius: 20px;
     outline: none;
     border: 1px solid gray;
     padding: 20px;
+}
+select{
+    padding: 0%;
+    padding-inline: 10px;
+    appearance: none;
+}
+.payment label{
+    text-align: center;
+
+    margin-bottom: 5px;
 }
 .payment__Price{
     display: flex;
@@ -50,10 +60,11 @@ margin-inline: auto;
         font-size: 19px;
 
     }
-    .payment__Form input{
+    .payment__Form input, select{
         width: 600px;
 
         margin-inline: auto;
+        background-color: transparent;
     }
     
 }

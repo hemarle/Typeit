@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Features.css'
 import mark from './images/mark.png'
 
 import illustration from './images/Illustration/Illustration2.svg'
+
+
+
+import {useStateValue} from './StateProvider'
+import { actionTypes } from "./reducer";
 function Features() {
+
+    const[{user}, dispatch]= useStateValue()
+
+
     return (
         <div className='features' id='features' >
             <div className='features__Image'>

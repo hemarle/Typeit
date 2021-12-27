@@ -29,8 +29,9 @@
 }
 .upload__Buttons{
     display: flex;
+    align-items: center;
 }
-.upload__Buttons button{
+.upload__Buttons button, .upload__Upload{
     border: none;
     outline: none;
     background-color: tomato;
@@ -41,6 +42,32 @@
     font-size: 14px;
     text-transform: capitalize;
     color: rgb(248, 220, 220);
+}
+input[type='file']{
+  
+display: none;
+
+}
+
+.upload__Upload{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.upload__Lists{
+    display: flex;
+    flex-wrap:wrap ;
+    /* text-align: justify; */
+    width: 100%;
+}
+.upload__List{
+    margin: 10px 0px 0px 10px;
+}
+.upload__ListRemove{
+color: red;
+text-align: center;
+font-weight: 900;
 }
 @media screen and (min-width:768px) {
     .upload__Image img{
@@ -62,5 +89,8 @@
     .upload__Buttons button{
         width: 200px;
 
+    }
+    .upload__Upload{
+        width: 200px;
     }
 }

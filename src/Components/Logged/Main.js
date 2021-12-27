@@ -8,7 +8,17 @@ import Profile from "./Profile";
 import Sidebar from "./Sidebar";
 import SignOut from "./SignOut";
 import Upload from "./Upload";
+
+// import {useStateValue} from '../../Components/StateProvider'
+// import { actionTypes } from "../reducer";
 function Main() {
+// const[{user}, dispatch]= useStateValue()
+
+// dispatch({
+//   type:actionTypes.set_user,
+//   user:'Femi'
+// })
+
   return (
     <div className="main">
       {/* <Nav/> */}

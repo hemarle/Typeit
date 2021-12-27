@@ -13,6 +13,7 @@
         display: flex;
         flex:0.3;
         background-color: var(--red);
+        background-color: rgb(140, 140, 240);
         min-height: 100vh;
         display: flex;
         flex-direction: column;

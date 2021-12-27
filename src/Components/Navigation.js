@@ -5,6 +5,8 @@ import logo from './images/logo.png'
 import hamburger from './images/icon-hamburger.svg'
 import close from './images/icon-close.svg'
 
+import {Link} from 'react-router-dom'
+
 function Navigation() {
    
     
@@ -39,16 +41,22 @@ function Navigation() {
             <nav  className='nav__Right remove'>
                     <img className='nav__Close'  src={close} alt='close navigation'/>
                 <ul className='nav__Links'>
-                    <li><a href='#'>About</a></li>
-                    <li><a href='#'>Features</a></li>
-                    <li><a href='#'>Pricing</a></li>
-                    <li><a href='#'> Testimonial</a></li>
+                    <li><a href='#about'>About</a></li>
+                    <li><a href='#features'>Features</a></li>
+                    <li><a href='#pricing'>Pricing</a></li>
+                    <li><a href='#testimonial'> Testimonial</a></li>
                     <li><a href='#'>Help</a></li>
                    
                 </ul>
                 <ul className='nav__Auth'>
-                    <li><a href='/authenticate'>Sign In</a></li>
-                    <li className='nav__SignUp' ><a href='/authenticate'> Sign Up</a></li>
+                      
+                        <li className='nav__Signup'>
+                  <Link to='/authenticate/signup'>
+                            Sign Up
+                      </Link>
+                            
+                            </li>
+                    <li className='nav__SignIn' ><a href='/authenticate'> Sign In</a></li>
                 </ul>
             </nav>
         </div>

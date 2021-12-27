@@ -12,6 +12,8 @@
   text-align: center;
   margin: 20px 0px;
 }
+.dashboard__Workdone{
+}
 .dashboard__WorkdoneHeader {
   display: flex;
   align-items: center;
@@ -20,6 +22,7 @@
 }
 .dashboard__Title {
   color: burlywood;
+  cursor: pointer;
 }
 .dashboard__Details {
   font-size: 0.8rem;
@@ -44,6 +47,9 @@
     margin-top: 10px;
 }
 
+.block{
+  display: block;
+}
 @media screen and (min-width:768px) {
     
     .dashboard__Content{
