@@ -16,14 +16,10 @@ import {
 import { useStateValue } from ".././StateProvider";
 import { actionTypes } from ".././reducer";
 
-// 'file' comes from the Blob or File API
-
 function Upload() {
   const [{email,user}, dispatch] = useStateValue();
 
-  
 
-    //  return ()=>authenticator()
  
 
   const [files, setFiles] = useState({
@@ -42,8 +38,6 @@ function Upload() {
       files: Array.from(e),
     });
   }
-
-  console.log(email,user.user.email, 'emmmail')
   function uploadFile() {
     files.files.forEach((file) => {
       const storageRef = ref(storage, `${email}/${file.name}`);
@@ -52,6 +46,7 @@ function Upload() {
           console.log(snapshot, "snapshot");
           getDownloadURL(storageRef, file).then(async (url) => {
             console.log(url, "url");
+
 
             try {
               const docRef = await setDoc(

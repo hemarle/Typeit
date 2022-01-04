@@ -6,13 +6,13 @@ import MainHome from "./MainHome";
 import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Backend from "./Backend.js";
+import Backend from "./Logged/Backend.js";
 import Main from "./Logged/Main";
 
 import { useStateValue } from "./StateProvider";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ email }, dispatch] = useStateValue();
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.defaults({ ease: "ease.inOut", duration: 0.7 });
@@ -50,16 +50,6 @@ function App() {
         { opacity: 1 }
       );
 
-    // Scroll trigger for home
-    // ScrollTrigger.create({
-    //     animation: tl,
-    //     trigger: query('.home'),
-    //     start: '-400px top',
-    //     toggleActions: 'play pause resume pause',
-    //     onEnter: console.log('enter')
-    // })
-
-    // Features animation
     tl3
       .fromTo(
         query(".features"),
@@ -142,16 +132,16 @@ function App() {
 
   return (
     <div className="app" ref={el}>
-      <Backend/>
+      {/* <Backend/> */}
       {/* <Navigation/> */}
 
-      {user ? (
+      {email ? (
         <Main />
       ) : (
         <>
           <Routes>
             <Route path="/authenticate/*" element={<Auth />}></Route>
-            <Route path="/" element={<MainHome />} />
+            <Route path="/*" element={<MainHome />} />
           </Routes>
         </>
       )}

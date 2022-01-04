@@ -11,6 +11,12 @@ a{
   text-decoration: none;
   cursor: pointer;
 }
+button{
+  cursor: pointer;
+}
+button:hover{
+  opacity: 0.9;
+}
 img{
   max-width: 100%;
   height: auto;

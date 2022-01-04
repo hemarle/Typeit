@@ -1,10 +1,7 @@
-import Cookies from "universal-cookie";
 
-const cookies= new Cookies();
- 
 export const initialState={
-    user:cookies.get('user'),
-    email:cookies.get('user')?.user?.email,
+    user:localStorage.getItem('user'),
+    email:localStorage.getItem('email'),
     files:[]
 
 }

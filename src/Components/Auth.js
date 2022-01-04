@@ -3,14 +3,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Auth.css";
 import firebase, { db } from "./firebase";
 
-import { collection, addDoc ,setDoc} from "firebase/firestore";
+import { collection, addDoc, setDoc } from "firebase/firestore";
 
 import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import Cookies from "universal-cookie/es6";
 import illustrator from "./images/Group.png";
 import logo from "./images/logo.png";
 import mailIcon from "./images/icon.png";
@@ -35,7 +34,12 @@ function Auth() {
   const passwordError = useRef();
   const emailError = useRef();
   const errorRef = useState();
+  const auth = getAuth();
 
+  const navigate = useNavigate();
+
+  let regRef = useRef();
+  let submitRef = useRef();
   useEffect(() => {
     revealRef.current.addEventListener("click", () => {
       let type = passwordRef.current.type;
@@ -52,14 +56,9 @@ function Auth() {
   }, []);
 
   //firebase
-  const auth = getAuth();
-  //cookies
-  const cookies = new Cookies();
+  
 
-  const navigate = useNavigate();
-
-  let regRef = useRef();
-  let submitRef = useRef();
+  //Changing login to registration
   useEffect(() => {
     function changeState() {
       if (signUp == true) {
@@ -71,21 +70,17 @@ function Auth() {
 
   //Authentication
   function authenticate(e) {
+    //signin
     if (!signUp) {
       if (email && password) {
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            console.log(user, "user");
-            cookies.set("user", user);
-            dispatch({
-              action: actionTypes.set_user,
-              user: user,
-            });
+            localStorage.setItem("email", user.email);
+
 
             navigate("/upload");
-            // ...
           })
 
           .catch((error) => {
@@ -95,29 +90,41 @@ function Auth() {
             // alert(errorMessage)
             errorRef.current.innerText = errorMessage;
           });
-      } else {
-        console.log("error");
-      }
-    } else {
-      if (email && password && username) {
+      } 
+      // else {
+        
+      //     errorRef.current.innerText =
+      //       " Please Fill in your correct details below";
+      //     console.log("empty");
+        
+      // }
+    } 
+    
+    //signup
+    else {
+      if ( email && password && username) {
         console.log(email, password, username);
         createUserWithEmailAndPassword(auth, email, password)
           .then(async (user) => {
             try {
-              const docRef = await setDoc(collection(db, "users", email), {
-                name: username,
-                email: email,
-              }, { merge: true });
+              const docRef = await setDoc(
+                collection(db, "users", email),
+                {
+                  name: username,
+                  email: email,
+                },
+                { merge: true }
+              );
               console.log("Document written with ID: ", docRef.id);
             } catch (e) {
               console.error("Error adding document: ", e);
             }
 
             console.log(user, "user");
-            cookies.set("user", user);
+            localStorage.setItem("email", user.email);
             dispatch({
               action: actionTypes.set_user,
-              user: user
+              user: user,
             });
             setSignUp(false);
             navigate("/upload");
@@ -127,19 +134,31 @@ function Auth() {
             let errorMessage = error.message?.split("/")[1]?.split(")")[0];
             errorRef.current.innerText = errorMessage;
           });
-      } else console.log("empty");
+      }
+      //  else {
+      //   errorRef.current.innerText =
+      //     " Please Fill in your correct details below";
+      //   console.log("empty");
+      // }
     }
     e.preventDefault();
   }
 
+  //client-side validation
+  // useEffect(()=>{
+
   function errorChecker(error, ref, name) {
-    console.log(error.length, "chards");
-    if (error.length > 4) {
-      ref.current.innerText = ``;
+    if (error.length < 6) {
+      ref.current.innerText = `${name} should have at least 6 characters`;
+     
     } else {
-      ref.current.innerText = `${name} should have at least 6 characters ${error.length}`;
+      ref.current.innerText = ``;
     }
   }
+
+  console.log(email, "email");
+
+  // }, [])
 
   return (
     <div className="auth">
@@ -166,10 +185,11 @@ function Auth() {
                 type="email"
                 placeholder="Email"
                 value={email}
-                onInputCapture={(e) => {
+                onChange={(e) => {
                   setEmail(e.target.value);
-                  errorChecker(email, emailError, "Email");
+                  errorChecker(e.target.value, emailError, "Email");
                 }}
+                required
               />
             </div>
             <div className="error-message" ref={emailError}></div>
@@ -184,9 +204,10 @@ function Auth() {
                 placeholder="Password"
                 onChange={(e) => {
                   setPassword(e.target.value);
-                  errorChecker(password, passwordError, "Password");
+                  errorChecker(e.target.value, passwordError, "Password");
                 }}
                 ref={passwordRef}
+                required
               />
             </div>
             <img src={viewIcon} ref={revealRef} />
@@ -216,7 +237,7 @@ function Auth() {
           <input
             type="submit"
             value={!signUp ? `Log in` : `sign up`}
-            className="auth__Submit"
+            className="auth__Submit neumorph"
             ref={submitRef}
           />
         </form>
