@@ -3,7 +3,6 @@ import React from 'react'
 import Features from './Features';
 import Footer from './Footer';
 import Home from './Home'
-import Map from './Map';
 import Navigation from './Navigation';
 import Plan from './Plan';
 import Subscribe from './Subscribe';
@@ -19,7 +18,6 @@ function MainHome() {
             <Users/>
             <Features/>
             <Plan/>
-            <Map/>
             <Testimonial/>
             <Subscribe/>
             <Footer/>
